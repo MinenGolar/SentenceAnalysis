@@ -1,0 +1,28 @@
+# sentence_analysis.algo
+
+# Initialize counters
+lengthCounter := 0
+wordCounter := 0
+vowelCounter := 0
+
+# Read input sentence character by character until encountering '.'
+WHILE (currentCharacter != '.'):
+    # Read the next character
+    currentCharacter := ReadNextCharacter()
+
+    # If the current character is not a space, increment lengthCounter
+    IF (currentCharacter != ' '):
+        lengthCounter := lengthCounter + 1
+
+    # If the current character is a space, increment wordCounter
+    IF (currentCharacter == ' '):
+        wordCounter := wordCounter + 1
+
+    # If the current character is a vowel, increment vowelCounter
+    IF (IsVowel(currentCharacter)):
+        vowelCounter := vowelCounter + 1
+
+# Print results
+Write("Length of the sentence: ", lengthCounter)
+Write("Number of words: ", wordCounter + 1)
+Write("Number of vowels: ", vowelCounter)
